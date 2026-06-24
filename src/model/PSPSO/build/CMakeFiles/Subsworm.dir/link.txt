@@ -1,2 +1,2 @@
-/usr/bin/ar qc libSubsworm.a CMakeFiles/Subsworm.dir/Subsworm/Subsworm.cpp.o
+/usr/bin/ar qc libSubsworm.a  CMakeFiles/Subsworm.dir/Subsworm/Subsworm.cpp.o
 /usr/bin/ranlib libSubsworm.a

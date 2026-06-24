@@ -124,11 +124,11 @@
     <friction>
 
       <ode>
-        <mu>0.6</mu>
-        <mu2>0.4</mu2>
+        <mu>0.4</mu>
+        <mu2>0.15</mu2>
         <fdir1>1 0 0</fdir1>
-        <slip1>0.08</slip1>
-        <slip2>0.08</slip2>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
       </ode>
 
       <torsional>
@@ -147,8 +147,8 @@
 
     <contact>
       <ode>
-        <kp>1000000.0</kp>
-        <kd>10000.0</kd>
+        <kp>1000000000.0</kp>
+        <kd>1000000.0</kd>
         <max_vel>0.01</max_vel>
         <min_depth>0.0</min_depth>
       </ode>
@@ -163,7 +163,7 @@
                     <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_1.stl</uri>
                     </mesh></geometry>
   <material>
-    <diffuse>0.30 0.20 0.10 1</diffuse>
+    <diffuse>0.12 0.12 0.12 1</diffuse>
     <ambient>0 0 0 0</ambient>
     <specular>0 0 0 1</specular>
     <emissive>0 0 0 1</emissive>
@@ -258,18 +258,18 @@
     <friction>
 
       <ode>
-        <mu>0.5</mu>
-        <mu2>0.5</mu2>
+        <mu>0.03</mu>
+        <mu2>0.02</mu2>
         <fdir1>1 0 0</fdir1>
-        <slip1>0.05</slip1>
-        <slip2>0.05</slip2>
+        <slip1>0.03</slip1>
+        <slip2>0.03</slip2>
       </ode>
 
       <torsional>
-        <coefficient>0.03</coefficient>
+        <coefficient>0.005</coefficient>
         <use_patch_radius>false</use_patch_radius>
         <surface_radius>0.12</surface_radius>
-        <ode><slip>0.0</slip></ode>
+        <ode><slip>0.01</slip></ode>
       </torsional>
 
     </friction>
@@ -281,8 +281,8 @@
 
     <contact>
       <ode>
-        <kp>100000.0</kp>
-        <kd>10000.0</kd>
+        <kp>10000000.0</kp>
+        <kd>1000.0</kd>
         <max_vel>0.01</max_vel>
         <min_depth>0.0</min_depth>
       </ode>
@@ -297,7 +297,7 @@
                     <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_3.stl</uri>
                     </mesh></geometry>
   <material>
-    <diffuse>0.36 0.28 0.16 1</diffuse>
+    <diffuse>0.55 0.80 1.00 1</diffuse>
     <ambient>0 0 0 0</ambient>
     <specular>0 0 0 1</specular>
     <emissive>0 0 0 1</emissive>
@@ -325,18 +325,18 @@
     <friction>
 
       <ode>
-        <mu>0.03</mu>
-        <mu2>0.02</mu2>
+        <mu>0.8</mu>
+        <mu2>0.3</mu2>
         <fdir1>1 0 0</fdir1>
-        <slip1>0.03</slip1>
-        <slip2>0.03</slip2>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
       </ode>
 
       <torsional>
-        <coefficient>0.005</coefficient>
+        <coefficient>0.03</coefficient>
         <use_patch_radius>false</use_patch_radius>
         <surface_radius>0.12</surface_radius>
-        <ode><slip>0.01</slip></ode>
+        <ode><slip>0.0</slip></ode>
       </torsional>
 
     </friction>
@@ -348,8 +348,8 @@
 
     <contact>
       <ode>
-        <kp>10000000.0</kp>
-        <kd>1000.0</kd>
+        <kp>10000000000.0</kp>
+        <kd>10000000.0</kd>
         <max_vel>0.01</max_vel>
         <min_depth>0.0</min_depth>
       </ode>
@@ -364,7 +364,7 @@
                     <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_4.stl</uri>
                     </mesh></geometry>
   <material>
-    <diffuse>0.55 0.80 1.00 1</diffuse>
+    <diffuse>0.55 0.55 0.55 1</diffuse>
     <ambient>0 0 0 0</ambient>
     <specular>0 0 0 1</specular>
     <emissive>0 0 0 1</emissive>
@@ -392,11 +392,11 @@
     <friction>
 
       <ode>
-        <mu>0.5</mu>
-        <mu2>0.5</mu2>
+        <mu>0.8</mu>
+        <mu2>0.3</mu2>
         <fdir1>1 0 0</fdir1>
-        <slip1>0.05</slip1>
-        <slip2>0.05</slip2>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
       </ode>
 
       <torsional>
@@ -415,8 +415,8 @@
 
     <contact>
       <ode>
-        <kp>100000.0</kp>
-        <kd>10000.0</kd>
+        <kp>10000000000.0</kp>
+        <kd>10000000.0</kd>
         <max_vel>0.01</max_vel>
         <min_depth>0.0</min_depth>
       </ode>
@@ -431,7 +431,7 @@
                     <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_5.stl</uri>
                     </mesh></geometry>
   <material>
-    <diffuse>0.36 0.28 0.16 1</diffuse>
+    <diffuse>0.55 0.55 0.55 1</diffuse>
     <ambient>0 0 0 0</ambient>
     <specular>0 0 0 1</specular>
     <emissive>0 0 0 1</emissive>
@@ -450,73 +450,6 @@
     
                     <mesh>
                     <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_6.stl</uri>
-                    </mesh>
-  </geometry>
-
-  <max_contacts>10</max_contacts>
-
-  <surface>
-    <friction>
-
-      <ode>
-        <mu>0.03</mu>
-        <mu2>0.02</mu2>
-        <fdir1>1 0 0</fdir1>
-        <slip1>0.03</slip1>
-        <slip2>0.03</slip2>
-      </ode>
-
-      <torsional>
-        <coefficient>0.005</coefficient>
-        <use_patch_radius>false</use_patch_radius>
-        <surface_radius>0.12</surface_radius>
-        <ode><slip>0.01</slip></ode>
-      </torsional>
-
-    </friction>
-
-    <bounce>
-      <restitution_coefficient>0.0</restitution_coefficient>
-      <threshold>0.1</threshold>
-    </bounce>
-
-    <contact>
-      <ode>
-        <kp>10000000.0</kp>
-        <kd>1000.0</kd>
-        <max_vel>0.01</max_vel>
-        <min_depth>0.0</min_depth>
-      </ode>
-    </contact>
-
-  </surface>
-</collision>
-
-<visual name="visual">
-  <geometry>
-                    <mesh>
-                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_6.stl</uri>
-                    </mesh></geometry>
-  <material>
-    <diffuse>0.55 0.80 1.00 1</diffuse>
-    <ambient>0 0 0 0</ambient>
-    <specular>0 0 0 1</specular>
-    <emissive>0 0 0 1</emissive>
-  </material>
-</visual>
-</link>
-                    </model>
-
-                    <model name="voronoi_example_zone_7">
-                        <static>true</static>
-                        <pose>0 0 -0.500 0 0 0</pose>
-                        <link name="link">
-<collision name="col">
-
-  <geometry>
-    
-                    <mesh>
-                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_7.stl</uri>
                     </mesh>
   </geometry>
 
@@ -562,10 +495,77 @@
 <visual name="visual">
   <geometry>
                     <mesh>
-                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_7.stl</uri>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_6.stl</uri>
                     </mesh></geometry>
   <material>
     <diffuse>0.12 0.12 0.12 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_7">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_7.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.8</mu>
+        <mu2>0.3</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000000.0</kp>
+        <kd>10000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_7.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.55 0.55 1</diffuse>
     <ambient>0 0 0 0</ambient>
     <specular>0 0 0 1</specular>
     <emissive>0 0 0 1</emissive>
@@ -727,78 +727,11 @@
     <friction>
 
       <ode>
-        <mu>0.03</mu>
-        <mu2>0.02</mu2>
+        <mu>0.6</mu>
+        <mu2>0.4</mu2>
         <fdir1>1 0 0</fdir1>
-        <slip1>0.03</slip1>
-        <slip2>0.03</slip2>
-      </ode>
-
-      <torsional>
-        <coefficient>0.005</coefficient>
-        <use_patch_radius>false</use_patch_radius>
-        <surface_radius>0.12</surface_radius>
-        <ode><slip>0.01</slip></ode>
-      </torsional>
-
-    </friction>
-
-    <bounce>
-      <restitution_coefficient>0.0</restitution_coefficient>
-      <threshold>0.1</threshold>
-    </bounce>
-
-    <contact>
-      <ode>
-        <kp>10000000.0</kp>
-        <kd>1000.0</kd>
-        <max_vel>0.01</max_vel>
-        <min_depth>0.0</min_depth>
-      </ode>
-    </contact>
-
-  </surface>
-</collision>
-
-<visual name="visual">
-  <geometry>
-                    <mesh>
-                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_10.stl</uri>
-                    </mesh></geometry>
-  <material>
-    <diffuse>0.55 0.80 1.00 1</diffuse>
-    <ambient>0 0 0 0</ambient>
-    <specular>0 0 0 1</specular>
-    <emissive>0 0 0 1</emissive>
-  </material>
-</visual>
-</link>
-                    </model>
-
-                    <model name="voronoi_example_zone_11">
-                        <static>true</static>
-                        <pose>0 0 -0.500 0 0 0</pose>
-                        <link name="link">
-<collision name="col">
-
-  <geometry>
-    
-                    <mesh>
-                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_11.stl</uri>
-                    </mesh>
-  </geometry>
-
-  <max_contacts>10</max_contacts>
-
-  <surface>
-    <friction>
-
-      <ode>
-        <mu>0.4</mu>
-        <mu2>0.15</mu2>
-        <fdir1>1 0 0</fdir1>
-        <slip1>0.0</slip1>
-        <slip2>0.0</slip2>
+        <slip1>0.08</slip1>
+        <slip2>0.08</slip2>
       </ode>
 
       <torsional>
@@ -817,8 +750,8 @@
 
     <contact>
       <ode>
-        <kp>1000000000.0</kp>
-        <kd>1000000.0</kd>
+        <kp>1000000.0</kp>
+        <kd>10000.0</kd>
         <max_vel>0.01</max_vel>
         <min_depth>0.0</min_depth>
       </ode>
@@ -829,96 +762,29 @@
 
 <visual name="visual">
   <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_10.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.30 0.20 0.10 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_11">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
                     <mesh>
                     <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_11.stl</uri>
-                    </mesh></geometry>
-  <material>
-    <diffuse>0.12 0.12 0.12 1</diffuse>
-    <ambient>0 0 0 0</ambient>
-    <specular>0 0 0 1</specular>
-    <emissive>0 0 0 1</emissive>
-  </material>
-</visual>
-</link>
-                    </model>
-
-                    <model name="voronoi_example_zone_12">
-                        <static>true</static>
-                        <pose>0 0 -0.500 0 0 0</pose>
-                        <link name="link">
-<collision name="col">
-
-  <geometry>
-    
-                    <mesh>
-                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_12.stl</uri>
-                    </mesh>
-  </geometry>
-
-  <max_contacts>10</max_contacts>
-
-  <surface>
-    <friction>
-
-      <ode>
-        <mu>0.03</mu>
-        <mu2>0.02</mu2>
-        <fdir1>1 0 0</fdir1>
-        <slip1>0.03</slip1>
-        <slip2>0.03</slip2>
-      </ode>
-
-      <torsional>
-        <coefficient>0.005</coefficient>
-        <use_patch_radius>false</use_patch_radius>
-        <surface_radius>0.12</surface_radius>
-        <ode><slip>0.01</slip></ode>
-      </torsional>
-
-    </friction>
-
-    <bounce>
-      <restitution_coefficient>0.0</restitution_coefficient>
-      <threshold>0.1</threshold>
-    </bounce>
-
-    <contact>
-      <ode>
-        <kp>10000000.0</kp>
-        <kd>1000.0</kd>
-        <max_vel>0.01</max_vel>
-        <min_depth>0.0</min_depth>
-      </ode>
-    </contact>
-
-  </surface>
-</collision>
-
-<visual name="visual">
-  <geometry>
-                    <mesh>
-                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_12.stl</uri>
-                    </mesh></geometry>
-  <material>
-    <diffuse>0.55 0.80 1.00 1</diffuse>
-    <ambient>0 0 0 0</ambient>
-    <specular>0 0 0 1</specular>
-    <emissive>0 0 0 1</emissive>
-  </material>
-</visual>
-</link>
-                    </model>
-
-                    <model name="voronoi_example_zone_13">
-                        <static>true</static>
-                        <pose>0 0 -0.500 0 0 0</pose>
-                        <link name="link">
-<collision name="col">
-
-  <geometry>
-    
-                    <mesh>
-                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_13.stl</uri>
                     </mesh>
   </geometry>
 
@@ -964,10 +830,144 @@
 <visual name="visual">
   <geometry>
                     <mesh>
-                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_13.stl</uri>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_11.stl</uri>
                     </mesh></geometry>
   <material>
     <diffuse>0.30 0.20 0.10 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_12">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_12.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.6</mu>
+        <mu2>0.4</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.08</slip1>
+        <slip2>0.08</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000.0</kp>
+        <kd>10000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_12.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.30 0.20 0.10 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_13">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_13.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.4</mu>
+        <mu2>0.15</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000000.0</kp>
+        <kd>1000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_13.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.12 0.12 0.12 1</diffuse>
     <ambient>0 0 0 0</ambient>
     <specular>0 0 0 1</specular>
     <emissive>0 0 0 1</emissive>
@@ -1062,140 +1062,6 @@
     <friction>
 
       <ode>
-        <mu>0.6</mu>
-        <mu2>0.4</mu2>
-        <fdir1>1 0 0</fdir1>
-        <slip1>0.08</slip1>
-        <slip2>0.08</slip2>
-      </ode>
-
-      <torsional>
-        <coefficient>0.03</coefficient>
-        <use_patch_radius>false</use_patch_radius>
-        <surface_radius>0.12</surface_radius>
-        <ode><slip>0.0</slip></ode>
-      </torsional>
-
-    </friction>
-
-    <bounce>
-      <restitution_coefficient>0.0</restitution_coefficient>
-      <threshold>0.1</threshold>
-    </bounce>
-
-    <contact>
-      <ode>
-        <kp>1000000.0</kp>
-        <kd>10000.0</kd>
-        <max_vel>0.01</max_vel>
-        <min_depth>0.0</min_depth>
-      </ode>
-    </contact>
-
-  </surface>
-</collision>
-
-<visual name="visual">
-  <geometry>
-                    <mesh>
-                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_15.stl</uri>
-                    </mesh></geometry>
-  <material>
-    <diffuse>0.30 0.20 0.10 1</diffuse>
-    <ambient>0 0 0 0</ambient>
-    <specular>0 0 0 1</specular>
-    <emissive>0 0 0 1</emissive>
-  </material>
-</visual>
-</link>
-                    </model>
-
-                    <model name="voronoi_example_zone_16">
-                        <static>true</static>
-                        <pose>0 0 -0.500 0 0 0</pose>
-                        <link name="link">
-<collision name="col">
-
-  <geometry>
-    
-                    <mesh>
-                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_16.stl</uri>
-                    </mesh>
-  </geometry>
-
-  <max_contacts>10</max_contacts>
-
-  <surface>
-    <friction>
-
-      <ode>
-        <mu>0.4</mu>
-        <mu2>0.15</mu2>
-        <fdir1>1 0 0</fdir1>
-        <slip1>0.0</slip1>
-        <slip2>0.0</slip2>
-      </ode>
-
-      <torsional>
-        <coefficient>0.03</coefficient>
-        <use_patch_radius>false</use_patch_radius>
-        <surface_radius>0.12</surface_radius>
-        <ode><slip>0.0</slip></ode>
-      </torsional>
-
-    </friction>
-
-    <bounce>
-      <restitution_coefficient>0.0</restitution_coefficient>
-      <threshold>0.1</threshold>
-    </bounce>
-
-    <contact>
-      <ode>
-        <kp>1000000000.0</kp>
-        <kd>1000000.0</kd>
-        <max_vel>0.01</max_vel>
-        <min_depth>0.0</min_depth>
-      </ode>
-    </contact>
-
-  </surface>
-</collision>
-
-<visual name="visual">
-  <geometry>
-                    <mesh>
-                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_16.stl</uri>
-                    </mesh></geometry>
-  <material>
-    <diffuse>0.12 0.12 0.12 1</diffuse>
-    <ambient>0 0 0 0</ambient>
-    <specular>0 0 0 1</specular>
-    <emissive>0 0 0 1</emissive>
-  </material>
-</visual>
-</link>
-                    </model>
-
-                    <model name="voronoi_example_zone_17">
-                        <static>true</static>
-                        <pose>0 0 -0.500 0 0 0</pose>
-                        <link name="link">
-<collision name="col">
-
-  <geometry>
-    
-                    <mesh>
-                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_17.stl</uri>
-                    </mesh>
-  </geometry>
-
-  <max_contacts>10</max_contacts>
-
-  <surface>
-    <friction>
-
-      <ode>
         <mu>0.8</mu>
         <mu2>0.3</mu2>
         <fdir1>1 0 0</fdir1>
@@ -1232,10 +1098,144 @@
 <visual name="visual">
   <geometry>
                     <mesh>
-                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_17.stl</uri>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_15.stl</uri>
                     </mesh></geometry>
   <material>
     <diffuse>0.55 0.55 0.55 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_16">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_16.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.6</mu>
+        <mu2>0.4</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.08</slip1>
+        <slip2>0.08</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000.0</kp>
+        <kd>10000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_16.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.30 0.20 0.10 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_17">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_17.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.6</mu>
+        <mu2>0.4</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.08</slip1>
+        <slip2>0.08</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000.0</kp>
+        <kd>10000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_17.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.30 0.20 0.10 1</diffuse>
     <ambient>0 0 0 0</ambient>
     <specular>0 0 0 1</specular>
     <emissive>0 0 0 1</emissive>
@@ -1263,11 +1263,11 @@
     <friction>
 
       <ode>
-        <mu>0.4</mu>
-        <mu2>0.15</mu2>
+        <mu>0.6</mu>
+        <mu2>0.4</mu2>
         <fdir1>1 0 0</fdir1>
-        <slip1>0.0</slip1>
-        <slip2>0.0</slip2>
+        <slip1>0.08</slip1>
+        <slip2>0.08</slip2>
       </ode>
 
       <torsional>
@@ -1286,8 +1286,8 @@
 
     <contact>
       <ode>
-        <kp>1000000000.0</kp>
-        <kd>1000000.0</kd>
+        <kp>1000000.0</kp>
+        <kd>10000.0</kd>
         <max_vel>0.01</max_vel>
         <min_depth>0.0</min_depth>
       </ode>
@@ -1302,7 +1302,7 @@
                     <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_18.stl</uri>
                     </mesh></geometry>
   <material>
-    <diffuse>0.12 0.12 0.12 1</diffuse>
+    <diffuse>0.30 0.20 0.10 1</diffuse>
     <ambient>0 0 0 0</ambient>
     <specular>0 0 0 1</specular>
     <emissive>0 0 0 1</emissive>
@@ -1370,6 +1370,5366 @@
                     </mesh></geometry>
   <material>
     <diffuse>0.55 0.55 0.55 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_20">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_20.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.8</mu>
+        <mu2>0.3</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000000.0</kp>
+        <kd>10000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_20.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.55 0.55 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_21">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_21.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.8</mu>
+        <mu2>0.3</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000000.0</kp>
+        <kd>10000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_21.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.55 0.55 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_22">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_22.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.03</mu>
+        <mu2>0.02</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.03</slip1>
+        <slip2>0.03</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.005</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.01</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000.0</kp>
+        <kd>1000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_22.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.80 1.00 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_23">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_23.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.8</mu>
+        <mu2>0.3</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000000.0</kp>
+        <kd>10000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_23.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.55 0.55 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_24">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_24.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.6</mu>
+        <mu2>0.4</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.08</slip1>
+        <slip2>0.08</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000.0</kp>
+        <kd>10000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_24.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.30 0.20 0.10 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_25">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_25.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.8</mu>
+        <mu2>0.3</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000000.0</kp>
+        <kd>10000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_25.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.55 0.55 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_26">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_26.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.8</mu>
+        <mu2>0.3</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000000.0</kp>
+        <kd>10000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_26.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.55 0.55 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_27">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_27.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.6</mu>
+        <mu2>0.4</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.08</slip1>
+        <slip2>0.08</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000.0</kp>
+        <kd>10000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_27.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.30 0.20 0.10 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_28">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_28.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.03</mu>
+        <mu2>0.02</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.03</slip1>
+        <slip2>0.03</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.005</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.01</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000.0</kp>
+        <kd>1000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_28.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.80 1.00 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_29">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_29.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.4</mu>
+        <mu2>0.15</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000000.0</kp>
+        <kd>1000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_29.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.12 0.12 0.12 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_30">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_30.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.4</mu>
+        <mu2>0.15</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000000.0</kp>
+        <kd>1000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_30.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.12 0.12 0.12 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_31">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_31.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.03</mu>
+        <mu2>0.02</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.03</slip1>
+        <slip2>0.03</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.005</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.01</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000.0</kp>
+        <kd>1000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_31.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.80 1.00 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_32">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_32.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.4</mu>
+        <mu2>0.15</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000000.0</kp>
+        <kd>1000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_32.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.12 0.12 0.12 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_33">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_33.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.03</mu>
+        <mu2>0.02</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.03</slip1>
+        <slip2>0.03</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.005</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.01</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000.0</kp>
+        <kd>1000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_33.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.80 1.00 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_34">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_34.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.03</mu>
+        <mu2>0.02</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.03</slip1>
+        <slip2>0.03</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.005</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.01</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000.0</kp>
+        <kd>1000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_34.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.80 1.00 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_35">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_35.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.4</mu>
+        <mu2>0.15</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000000.0</kp>
+        <kd>1000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_35.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.12 0.12 0.12 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_36">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_36.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.4</mu>
+        <mu2>0.15</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000000.0</kp>
+        <kd>1000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_36.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.12 0.12 0.12 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_37">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_37.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.6</mu>
+        <mu2>0.4</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.08</slip1>
+        <slip2>0.08</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000.0</kp>
+        <kd>10000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_37.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.30 0.20 0.10 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_38">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_38.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.03</mu>
+        <mu2>0.02</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.03</slip1>
+        <slip2>0.03</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.005</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.01</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000.0</kp>
+        <kd>1000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_38.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.80 1.00 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_39">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_39.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.4</mu>
+        <mu2>0.15</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000000.0</kp>
+        <kd>1000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_39.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.12 0.12 0.12 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_40">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_40.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.03</mu>
+        <mu2>0.02</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.03</slip1>
+        <slip2>0.03</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.005</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.01</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000.0</kp>
+        <kd>1000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_40.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.80 1.00 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_41">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_41.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.6</mu>
+        <mu2>0.4</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.08</slip1>
+        <slip2>0.08</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000.0</kp>
+        <kd>10000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_41.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.30 0.20 0.10 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_42">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_42.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.8</mu>
+        <mu2>0.3</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000000.0</kp>
+        <kd>10000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_42.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.55 0.55 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_43">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_43.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.8</mu>
+        <mu2>0.3</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000000.0</kp>
+        <kd>10000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_43.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.55 0.55 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_44">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_44.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.4</mu>
+        <mu2>0.15</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000000.0</kp>
+        <kd>1000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_44.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.12 0.12 0.12 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_45">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_45.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.03</mu>
+        <mu2>0.02</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.03</slip1>
+        <slip2>0.03</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.005</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.01</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000.0</kp>
+        <kd>1000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_45.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.80 1.00 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_46">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_46.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.6</mu>
+        <mu2>0.4</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.08</slip1>
+        <slip2>0.08</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000.0</kp>
+        <kd>10000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_46.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.30 0.20 0.10 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_47">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_47.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.03</mu>
+        <mu2>0.02</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.03</slip1>
+        <slip2>0.03</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.005</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.01</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000.0</kp>
+        <kd>1000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_47.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.80 1.00 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_48">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_48.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.6</mu>
+        <mu2>0.4</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.08</slip1>
+        <slip2>0.08</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000.0</kp>
+        <kd>10000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_48.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.30 0.20 0.10 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_49">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_49.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.6</mu>
+        <mu2>0.4</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.08</slip1>
+        <slip2>0.08</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000.0</kp>
+        <kd>10000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_49.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.30 0.20 0.10 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_50">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_50.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.8</mu>
+        <mu2>0.3</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000000.0</kp>
+        <kd>10000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_50.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.55 0.55 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_51">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_51.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.4</mu>
+        <mu2>0.15</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000000.0</kp>
+        <kd>1000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_51.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.12 0.12 0.12 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_52">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_52.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.03</mu>
+        <mu2>0.02</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.03</slip1>
+        <slip2>0.03</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.005</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.01</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000.0</kp>
+        <kd>1000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_52.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.80 1.00 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_53">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_53.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.03</mu>
+        <mu2>0.02</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.03</slip1>
+        <slip2>0.03</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.005</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.01</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000.0</kp>
+        <kd>1000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_53.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.80 1.00 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_54">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_54.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.03</mu>
+        <mu2>0.02</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.03</slip1>
+        <slip2>0.03</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.005</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.01</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000.0</kp>
+        <kd>1000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_54.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.80 1.00 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_55">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_55.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.03</mu>
+        <mu2>0.02</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.03</slip1>
+        <slip2>0.03</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.005</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.01</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000.0</kp>
+        <kd>1000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_55.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.80 1.00 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_56">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_56.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.8</mu>
+        <mu2>0.3</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000000.0</kp>
+        <kd>10000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_56.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.55 0.55 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_57">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_57.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.8</mu>
+        <mu2>0.3</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000000.0</kp>
+        <kd>10000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_57.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.55 0.55 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_58">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_58.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.6</mu>
+        <mu2>0.4</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.08</slip1>
+        <slip2>0.08</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000.0</kp>
+        <kd>10000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_58.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.30 0.20 0.10 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_59">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_59.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.8</mu>
+        <mu2>0.3</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000000.0</kp>
+        <kd>10000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_59.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.55 0.55 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_60">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_60.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.4</mu>
+        <mu2>0.15</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000000.0</kp>
+        <kd>1000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_60.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.12 0.12 0.12 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_61">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_61.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.8</mu>
+        <mu2>0.3</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000000.0</kp>
+        <kd>10000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_61.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.55 0.55 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_62">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_62.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.4</mu>
+        <mu2>0.15</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000000.0</kp>
+        <kd>1000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_62.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.12 0.12 0.12 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_63">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_63.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.4</mu>
+        <mu2>0.15</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000000.0</kp>
+        <kd>1000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_63.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.12 0.12 0.12 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_64">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_64.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.6</mu>
+        <mu2>0.4</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.08</slip1>
+        <slip2>0.08</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000.0</kp>
+        <kd>10000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_64.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.30 0.20 0.10 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_65">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_65.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.03</mu>
+        <mu2>0.02</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.03</slip1>
+        <slip2>0.03</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.005</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.01</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000.0</kp>
+        <kd>1000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_65.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.80 1.00 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_66">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_66.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.6</mu>
+        <mu2>0.4</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.08</slip1>
+        <slip2>0.08</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000.0</kp>
+        <kd>10000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_66.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.30 0.20 0.10 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_67">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_67.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.6</mu>
+        <mu2>0.4</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.08</slip1>
+        <slip2>0.08</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000.0</kp>
+        <kd>10000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_67.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.30 0.20 0.10 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_68">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_68.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.8</mu>
+        <mu2>0.3</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000000.0</kp>
+        <kd>10000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_68.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.55 0.55 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_69">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_69.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.6</mu>
+        <mu2>0.4</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.08</slip1>
+        <slip2>0.08</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000.0</kp>
+        <kd>10000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_69.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.30 0.20 0.10 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_70">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_70.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.8</mu>
+        <mu2>0.3</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000000.0</kp>
+        <kd>10000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_70.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.55 0.55 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_71">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_71.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.4</mu>
+        <mu2>0.15</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000000.0</kp>
+        <kd>1000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_71.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.12 0.12 0.12 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_72">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_72.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.8</mu>
+        <mu2>0.3</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000000.0</kp>
+        <kd>10000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_72.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.55 0.55 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_73">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_73.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.03</mu>
+        <mu2>0.02</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.03</slip1>
+        <slip2>0.03</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.005</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.01</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000.0</kp>
+        <kd>1000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_73.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.80 1.00 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_74">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_74.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.6</mu>
+        <mu2>0.4</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.08</slip1>
+        <slip2>0.08</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000.0</kp>
+        <kd>10000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_74.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.30 0.20 0.10 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_75">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_75.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.6</mu>
+        <mu2>0.4</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.08</slip1>
+        <slip2>0.08</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000.0</kp>
+        <kd>10000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_75.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.30 0.20 0.10 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_76">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_76.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.4</mu>
+        <mu2>0.15</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000000.0</kp>
+        <kd>1000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_76.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.12 0.12 0.12 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_77">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_77.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.6</mu>
+        <mu2>0.4</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.08</slip1>
+        <slip2>0.08</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000.0</kp>
+        <kd>10000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_77.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.30 0.20 0.10 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_78">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_78.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.8</mu>
+        <mu2>0.3</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000000.0</kp>
+        <kd>10000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_78.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.55 0.55 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_79">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_79.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.6</mu>
+        <mu2>0.4</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.08</slip1>
+        <slip2>0.08</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000.0</kp>
+        <kd>10000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_79.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.30 0.20 0.10 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_80">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_80.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.03</mu>
+        <mu2>0.02</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.03</slip1>
+        <slip2>0.03</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.005</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.01</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000.0</kp>
+        <kd>1000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_80.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.80 1.00 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_81">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_81.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.4</mu>
+        <mu2>0.15</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000000.0</kp>
+        <kd>1000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_81.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.12 0.12 0.12 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_82">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_82.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.03</mu>
+        <mu2>0.02</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.03</slip1>
+        <slip2>0.03</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.005</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.01</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000.0</kp>
+        <kd>1000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_82.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.80 1.00 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_83">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_83.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.8</mu>
+        <mu2>0.3</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000000.0</kp>
+        <kd>10000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_83.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.55 0.55 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_84">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_84.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.03</mu>
+        <mu2>0.02</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.03</slip1>
+        <slip2>0.03</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.005</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.01</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000.0</kp>
+        <kd>1000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_84.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.80 1.00 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_85">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_85.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.8</mu>
+        <mu2>0.3</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000000.0</kp>
+        <kd>10000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_85.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.55 0.55 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_86">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_86.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.4</mu>
+        <mu2>0.15</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000000.0</kp>
+        <kd>1000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_86.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.12 0.12 0.12 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_87">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_87.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.03</mu>
+        <mu2>0.02</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.03</slip1>
+        <slip2>0.03</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.005</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.01</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000.0</kp>
+        <kd>1000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_87.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.80 1.00 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_88">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_88.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.6</mu>
+        <mu2>0.4</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.08</slip1>
+        <slip2>0.08</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000.0</kp>
+        <kd>10000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_88.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.30 0.20 0.10 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_89">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_89.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.03</mu>
+        <mu2>0.02</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.03</slip1>
+        <slip2>0.03</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.005</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.01</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000.0</kp>
+        <kd>1000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_89.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.80 1.00 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_90">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_90.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.4</mu>
+        <mu2>0.15</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000000.0</kp>
+        <kd>1000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_90.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.12 0.12 0.12 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_91">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_91.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.4</mu>
+        <mu2>0.15</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000000.0</kp>
+        <kd>1000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_91.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.12 0.12 0.12 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_92">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_92.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.6</mu>
+        <mu2>0.4</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.08</slip1>
+        <slip2>0.08</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000.0</kp>
+        <kd>10000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_92.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.30 0.20 0.10 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_93">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_93.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.03</mu>
+        <mu2>0.02</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.03</slip1>
+        <slip2>0.03</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.005</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.01</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000.0</kp>
+        <kd>1000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_93.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.80 1.00 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_94">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_94.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.4</mu>
+        <mu2>0.15</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000000.0</kp>
+        <kd>1000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_94.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.12 0.12 0.12 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_95">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_95.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.03</mu>
+        <mu2>0.02</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.03</slip1>
+        <slip2>0.03</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.005</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.01</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000.0</kp>
+        <kd>1000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_95.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.80 1.00 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_96">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_96.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.8</mu>
+        <mu2>0.3</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>10000000000.0</kp>
+        <kd>10000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_96.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.55 0.55 0.55 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_97">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_97.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.6</mu>
+        <mu2>0.4</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.08</slip1>
+        <slip2>0.08</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000.0</kp>
+        <kd>10000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_97.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.30 0.20 0.10 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_98">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_98.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.4</mu>
+        <mu2>0.15</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000000.0</kp>
+        <kd>1000000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_98.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.12 0.12 0.12 1</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>
+                    </model>
+
+                    <model name="voronoi_example_zone_99">
+                        <static>true</static>
+                        <pose>0 0 -0.500 0 0 0</pose>
+                        <link name="link">
+<collision name="col">
+
+  <geometry>
+    
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_99.stl</uri>
+                    </mesh>
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>0.6</mu>
+        <mu2>0.4</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>0.08</slip1>
+        <slip2>0.08</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>0.03</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>0.12</surface_radius>
+        <ode><slip>0.0</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+      <threshold>0.1</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>1000000.0</kp>
+        <kd>10000.0</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>
+                    <mesh>
+                    <uri>model://worlds_library/voronoi_example/meshes/voronoi_example_zone_99.stl</uri>
+                    </mesh></geometry>
+  <material>
+    <diffuse>0.30 0.20 0.10 1</diffuse>
     <ambient>0 0 0 0</ambient>
     <specular>0 0 0 1</specular>
     <emissive>0 0 0 1</emissive>

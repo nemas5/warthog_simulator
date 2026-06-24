@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/ros-noetic/warthog_simulator/PSPSO/Particle/Particle.cpp
+Particle/Particle.hpp
+-
+cmath
+-
+algorithm
+-
+
+/ros-noetic/warthog_simulator/PSPSO/Particle/Particle.hpp
+vector
+-
+

@@ -26,11 +26,10 @@ sudo docker run -it \
   --network host \
   --ipc host \
   --privileged \
-  -e DISPLAY="$DISPLAY" \
+  -e DISPLAY=$DISPLAY \
   -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
   -v "$HOME/ros-noetic":/ros-noetic \
-  osrf/ros:noetic-desktop-full \
-  bash
+  osrf/ros:noetic-desktop-full
 ```
 
 ### Установка симулятора
@@ -39,16 +38,29 @@ sudo docker run -it \
 ```bash
 cd ~/ros-noetic/warthog_simulator
 ```
-Установить ROS/system-зависимости, Warthog, Gazebo plugins, rosbag и rospy из `package.xml`:
+Обновить индексы APT и установить системные и ROS-зависимости, включая Warthog, `catkin build`, `python3-pip` и `python3-venv`:
+```bash
+src/scripts/setup.sh
+```
+Подключить базовое окружение ROS Noetic в текущем терминале:
+```bash
+source /opt/ros/noetic/setup.bash
+```
+Установить остальные ROS/system-зависимости из `package.xml`:
 ```bash
 rosdep install --from-paths src --ignore-src -r -y
 ```
 Создать Python-окружение и поставить зависимости для ROS-нод, инструментов генерации данных и обработки результатов
 симуляций из `requirements.txt`:
 ```bash
-source src/scripts/setup.sh
+source src/scripts/python_venv_setup.sh
 ```
-После изменения `requirements.txt` лучше заново выполнить `source src/scripts/setup.sh` и пересобрать пакет, чтобы `catkin_install_python` использовал актуальный Python.
+После изменения `requirements.txt` лучше заново выполнить `source src/scripts/python_venv_setup.sh` и пересобрать пакет, чтобы `catkin_install_python` использовал актуальный Python.
+
+Собрать Python-модуль PSPSO. Это необходимо для тестов моделей: `model_test.py` импортирует `pspso` из `src/model/PSPSO/build`.
+```bash
+src/scripts/build_pspso.sh
+```
 
 Собрать catkin-пакет:
 ```bash
@@ -68,6 +80,7 @@ warthog_simulator/                 # корень catkin workspace
 ├── src/                           # пакет warthog_simulator
 │   ├── scripts/                   # оболочки запуска и настройки окружения
 │   │   ├── setup.sh
+│   │   ├── python_venv_setup.sh
 │   │   └── start_simulation.sh
 │   ├── ros_nodes/                 # ROS-ноды симуляции
 │   │   ├── trajectory_runner.py
@@ -134,7 +147,7 @@ warthog_simulator/                 # корень catkin workspace
 
 ```bash
 cd ~/ros-noetic/warthog_simulator
-source src/scripts/setup.sh
+source src/scripts/python_venv_setup.sh
 python src/world_generation/world_generator.py
 ```
 
@@ -176,7 +189,7 @@ src/worlds_library/ice
 src/scripts/start_simulation.sh world_example
 
 # Набор миров, короткий прогон без Gazebo UI
-src/scripts/start_simulation.sh basis_example --duration-sec 300 --trajectory-type lemniscate
+src/scripts/start_simulation.sh basis_example --duration-sec 300 --trajectory-type circle
 ```
 
 Для каждого мира запускаются `trajectory_runner.py`, `surface_detector.py` и `rosbag record`, затем bag автоматически преобразуется в CSV:
@@ -190,17 +203,15 @@ src/scripts/start_simulation.sh basis_example --duration-sec 300 --trajectory-ty
 |----------|--------------|------------|
 | `--x`, `--y`, `--z` | `0.0`, `0.0`, `0.5` | Начальная позиция Warthog. |
 | `--gui` | выключен | Показать интерфейс Gazebo. |
-| `--trajectory-type NAME` | `lemniscate` | `lemniscate`, `circle`, `segments`, `interpolated` или `waypoints`. |
+| `--trajectory-type NAME` | `circle` | `circle`, `segments` или `interpolated`. |
 | `--duration-sec VALUE` | `1800` | Длительность прогона каждого мира, с. |
 | `--rate VALUE` | `20` | Частота публикации команд, Гц. |
 | `--no-parse` | выключен | Не преобразовывать bag в CSV. |
 
 Доступные типы траекторий в базовом `trajectory_runner.py`:
-- `lemniscate` — аналитическая восьмёрка;
 - `circle` — аналитическое движение по окружности;
 - `segments` — дискретная последовательность команд `(linear_x, angular_z, duration)`;
-- `interpolated` — линейная интерполяция между ключевыми командами `(time, linear_x, angular_z)`;
-- `waypoints` — движение по списку точек с простым pose-feedback контроллером.
+- `interpolated` — линейная интерполяция между ключевыми командами `(time, linear_x, angular_z)`.
 
 ## Кастомизация траектории движения
 
@@ -234,7 +245,6 @@ start_simulation.sh
 Фабрика заполняется в методе `TrajectoryRunner._build_factory()`:
 
 ```python
-factory.register("lemniscate", self._build_lemniscate)
 factory.register("circle", self._build_circle)
 ```
 
@@ -266,7 +276,7 @@ def _build_my_trajectory(self) -> Trajectory:
     return AnalyticalTrajectory("my_trajectory", command)
 ```
 
-Для траектории с внутренним состоянием удобнее создать отдельный класс. Например, `WaypointTrajectory` хранит индекс текущей точки и использует реальное положение робота. Если нужны новые настраиваемые параметры, их следует добавить в `RunnerParams` и загрузить в `_load_params()`.
+Для траектории с внутренним состоянием удобнее создать отдельный класс. Если нужны новые настраиваемые параметры, их следует добавить в `RunnerParams` и загрузить в `_load_params()`.
 
 ### Влияние времени симуляции
 
@@ -286,11 +296,9 @@ elapsed = (rospy.Time.now() - start).to_sec()
 
 Зависимость встроенных траекторий от времени различается:
 
-- `lemniscate` вычисляет команду непосредственно из `elapsed`;
 - `segments` выбирает текущий временной сегмент;
 - `interpolated` интерполирует команды между временными точками;
-- `circle` публикует постоянные скорости и использует время только для общей длительности запуска;
-- `waypoints` управляется текущей позой, а время влияет только на момент завершения.
+- `circle` публикует постоянные скорости и использует время только для общей длительности запуска.
 
 Важно: `start_simulation.sh` дополнительно ограничивает весь `roslaunch` командой системного `timeout` с той же длительностью. Это wall time, в который входит загрузка Gazebo. Поэтому при долгом запуске Gazebo или `real_time_factor < 1` оболочка может завершить процесс раньше, чем `trajectory_runner` наберёт заданное simulation time.
 
@@ -300,7 +308,25 @@ elapsed = (rospy.Time.now() - start).to_sec()
 
 ## Запуск тестирования модели
 
-Скрипт start_model_testing.sh получает на вход название директории с моделью, которая находится в `models/neural_models/`, и название CSV-файла с результатами симуляции, который находится в `datasets`. Он запускает `model_test.py`, подключающий модель `models/neural_models/` и выполняющий её тестирование на указанном датасете. (ПОКА ЧТО НЕ ТРОГАЙ РЕАЛИЗАЦИЮ, НАСТРОЙ ТОЛЬКО ПОДКЛЮЧЕНИЯ И ОТНОСИТЕЛЬНЫЕ ПУТИ ВЕЗДЕ И САМ СКРИПТ, ТОЛЬКО ПАЙПЛАЙН!)
+`model_test.py` принимает название директории базиса из `src/model/neural_models/`
+и название одиночного CSV-датасета из `datasets/`. Вложенные директории внутри
+`datasets/` этим тестом не обрабатываются. Перед запуском теста должен быть
+собран PSPSO-модуль:
+
+```bash
+source src/scripts/python_venv_setup.sh
+src/scripts/build_pspso.sh
+python src/model/model_test.py model_example voronoi_example
+```
+
+Или через небольшой скрипт, который сам подключает Python-окружение:
+
+```bash
+src/scripts/start_model_testing.sh model_example voronoi_example
+```
+
+Для примера выше будут прочитаны модели из
+`src/model/neural_models/model_example/` и датасет `datasets/voronoi_example.csv`.
 
 ## Запуск тестирования управления на основе модели
 
@@ -321,7 +347,7 @@ elapsed = (rospy.Time.now() - start).to_sec()
 Обычно парсер запускает `start_simulation.sh`. Вручную его можно вызвать по имени мира или набора:
 
 ```bash
-source src/scripts/setup.sh
+source src/scripts/python_venv_setup.sh
 src/bag_parser/gazebo_dataset_parser.py basis_example
 ```
 
@@ -337,24 +363,22 @@ rosrun warthog_simulator gazebo_dataset_parser.py basis_example
 
 ## Расширение модели Warthog через URDF/Xacro
 
-Дополнительные компоненты робота — лидары, камеры, датчики и Gazebo-плагины — можно добавлять отдельными файлами в `src/urdf/`. Warthog не подключает всю директорию автоматически: каждый дополнительный Xacro-файл нужно явно передать через отдельную переменную окружения в `simulation.launch`.
+Дополнительные компоненты робота — лидары, камеры, датчики и Gazebo-плагины — можно добавлять отдельными файлами в `src/urdf/`. Warthog не подключает всю директорию автоматически: каждый дополнительный Xacro-файл нужно явно передать через переменную окружения до запуска `roslaunch`.
 
-Текущий пример подключает точную одометрию:
+Текущий `start_simulation.sh` подключает точную одометрию перед вызовом `simulation.launch`:
 
-```xml
-<env name="WARTHOG_URDF_EXTRAS"
-     value="$(find warthog_simulator)/urdf/warthog_ground_truth.urdf.xacro"/>
+```bash
+export WARTHOG_URDF_EXTRAS="${PACKAGE_DIR}/urdf/warthog_ground_truth.urdf.xacro"
 ```
 
 Для нового компонента следует:
 
 1. Создать отдельный файл, например `src/urdf/warthog_lidar.urdf.xacro`.
 2. Описать в нём `link`, фиксированный `joint` к раме Warthog и Gazebo sensor/plugin.
-3. Добавить в `simulation.launch` переменную окружения, которую поддерживает установленное описание Warthog или подключаемый Xacro-файл:
+3. Экспортировать в `start_simulation.sh` переменную окружения, которую поддерживает установленное описание Warthog или подключаемый Xacro-файл:
 
-   ```xml
-   <env name="WARTHOG_LIDAR_URDF"
-        value="$(find warthog_simulator)/urdf/warthog_lidar.urdf.xacro"/>
+   ```bash
+   export WARTHOG_LIDAR_URDF="${PACKAGE_DIR}/urdf/warthog_lidar.urdf.xacro"
    ```
 
 4. Явно включить этот файл из основного файла расширений или из другого Xacro, который уже передан через `WARTHOG_URDF_EXTRAS`:
@@ -396,8 +420,10 @@ rosrun warthog_simulator gazebo_dataset_parser.py basis_example
 После изменения `package.xml`, URDF/Xacro или состава зависимостей нужно повторно выполнить:
 
 ```bash
+src/scripts/setup.sh
+source /opt/ros/noetic/setup.bash
 rosdep install --from-paths src --ignore-src -r -y
-source src/scripts/setup.sh
+source src/scripts/python_venv_setup.sh
 catkin build warthog_simulator
 source devel/setup.bash
 ```

@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/PSO.dir/PSO/PSO.cpp.o"
-  "CMakeFiles/PSO.dir/PSO/PSO.cpp.o.d"
   "libPSO.a"
   "libPSO.pdb"
 )

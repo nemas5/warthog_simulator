@@ -1,4 +1,5 @@
 import sys
+import argparse
 from pathlib import Path
 
 import torch
@@ -8,8 +9,13 @@ import matplotlib.pyplot as plt
 from torchdiffeq import odeint
 from sklearn.metrics import mean_absolute_error
 
-sys.path.insert(0, str(Path(__file__).resolve().parent / "PSPSO" / "build"))
+MODEL_DIR = Path(__file__).resolve().parent
+PACKAGE_DIR = MODEL_DIR.parent
+WORKSPACE_DIR = PACKAGE_DIR.parent
+
+sys.path.insert(0, str(MODEL_DIR / "PSPSO" / "build"))
 import pspso
+
 
 class ODEFunc(torch.nn.Module):
     def __init__(self, hidden=64):
@@ -26,22 +32,54 @@ class ODEFunc(torch.nn.Module):
         return self.net(torch.cat([y, self.ctrl], dim=-1))
 
 
-ode_grass = ODEFunc()
-ode_mud   = ODEFunc()
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("basis_name")
+    parser.add_argument("dataset_name")
+    return parser.parse_args()
 
-ckpt = torch.load("../neural_models/neural_ode_checkpoint.pth", map_location="cpu")
-ode_grass.load_state_dict(ckpt["model_grass"])
-ode_mud.load_state_dict(ckpt["model_mud"])
-ode_grass.eval()
-ode_mud.eval()
 
-df = pd.read_csv("../data_samples/inference_test_data.csv")
-df = df.iloc[:len(df) // 2].reset_index(drop=True)
+def is_state_dict(value) -> bool:
+    return isinstance(value, dict) and all(torch.is_tensor(v) for v in value.values())
 
-df_cur  = df.iloc[:-1].reset_index(drop=True)
-df_next = df.iloc[1:].reset_index(drop=True)
 
-f_target = df_next[["odom_vx", "odom_wz"]].values  # shape (N, 2)
+def load_model_from_state_dict(state_dict) -> ODEFunc:
+    model = ODEFunc()
+    model.load_state_dict(state_dict)
+    model.eval()
+    return model
+
+
+def load_basis_models(basis_name: str):
+    basis_dir = MODEL_DIR / "neural_models" / basis_name
+    model_files = sorted(
+        p for p in basis_dir.iterdir()
+        if p.is_file() and p.suffix in {".pt", ".pth"}
+    )
+
+    models = []
+    for model_file in model_files:
+        checkpoint = torch.load(model_file, map_location="cpu")
+        if is_state_dict(checkpoint):
+            models.append((model_file.stem, load_model_from_state_dict(checkpoint)))
+        else:
+            for key, value in checkpoint.items():
+                if is_state_dict(value):
+                    name = f"{model_file.stem}:{key}"
+                    models.append((name, load_model_from_state_dict(value)))
+
+    if not models:
+        raise RuntimeError(f"No models loaded from {basis_dir}")
+
+    return models
+
+
+def dataset_path(dataset_name: str) -> Path:
+    name = Path(dataset_name).name
+    if not name.endswith(".csv"):
+        name = f"{name}.csv"
+    return WORKSPACE_DIR / "datasets" / name
+
 
 @torch.no_grad()
 def get_basis_output(model: ODEFunc, df_slice: pd.DataFrame) -> np.ndarray:
@@ -64,8 +102,20 @@ def get_basis_output(model: ODEFunc, df_slice: pd.DataFrame) -> np.ndarray:
     return np.vstack(outputs)                # shape: (N, 2)
 
 
-g1 = get_basis_output(ode_grass, df_cur)     # grass: [vx_next, wz_next]
-g2 = get_basis_output(ode_mud,   df_cur)     # mud:   [vx_next, wz_next]
+args = parse_args()
+models = load_basis_models(args.basis_name)
+print("Loaded models:")
+for model_idx, (model_name, _) in enumerate(models):
+    print(f"  {model_idx}: {model_name}")
+
+df = pd.read_csv(dataset_path(args.dataset_name))
+
+df_cur  = df.iloc[:-1].reset_index(drop=True)
+df_next = df.iloc[1:].reset_index(drop=True)
+
+f_target = df_next[["odom_vx", "odom_wz"]].values  # shape (N, 2)
+basis_outputs = [get_basis_output(model, df_cur) for _, model in models]
+basis_values = np.stack(basis_outputs, axis=1)      # shape: (N, models, 2)
 
 
 subswarms   = 5
@@ -74,7 +124,7 @@ cognitive   = 2
 social      = 2
 perturb     = 0.002
 max_ops     = 50
-dimensions  = 2           # ДВА коэффициента (для g1 и g2) [file:4]
+dimensions  = len(models) # по одному коэффициенту на модель базиса
 start_dyn_i = 0           # индекс стартовой базисной функции (не критично здесь)
 
 # NOTE: два независимых экземпляра — чтобы каналы vx и wz не мешали друг другу
@@ -85,13 +135,13 @@ pso_wz = pspso.PSO(subswarms, particles, cognitive, social,
 
 N = len(df_cur)
 pred       = np.zeros((N, 2))   # [vx_pred_next, wz_pred_next]
-coeffs_vx  = np.zeros((N, 2))
-coeffs_wz  = np.zeros((N, 2))
+coeffs_vx  = np.zeros((N, dimensions))
+coeffs_wz  = np.zeros((N, dimensions))
 
 for i in range(N):
     # Базисные значения для текущего шага
-    basis_vx = [float(g1[i, 0]), float(g2[i, 0])]  # grass/mud для vx_next
-    basis_wz = [float(g1[i, 1]), float(g2[i, 1])]  # grass/mud для wz_next
+    basis_vx = basis_values[i, :, 0].astype(float).tolist()
+    basis_wz = basis_values[i, :, 1].astype(float).tolist()
 
     real_next_vx = float(f_target[i, 0])
     real_next_wz = float(f_target[i, 1])
@@ -161,12 +211,10 @@ axs[2].grid(True)
 plt.tight_layout()
 plt.show()
 
-delta_real_vx = df_next["odom_vx"].to_numpy() - df_cur["odom_vx"].to_numpy()
-
 plt.figure(figsize=(12, 4))
-plt.plot(t, delta_real_vx, label="delta vx real")
-plt.plot(t, g1[:, 0],   label="g1 vx_next (grass)")
-plt.plot(t, g2[:, 0],   label="g2 vx_next (mud)")
+plt.plot(t, true_vx, label="vx real next", color="black")
+for model_idx, (model_name, _) in enumerate(models):
+    plt.plot(t, basis_outputs[model_idx][:, 0], label=f"{model_idx}: {model_name}")
 plt.legend()
 plt.grid(True)
 plt.tight_layout()

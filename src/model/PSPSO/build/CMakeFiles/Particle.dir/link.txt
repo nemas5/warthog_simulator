@@ -1,2 +1,2 @@
-/usr/bin/ar qc libParticle.a CMakeFiles/Particle.dir/Particle/Particle.cpp.o
+/usr/bin/ar qc libParticle.a  CMakeFiles/Particle.dir/Particle/Particle.cpp.o
 /usr/bin/ranlib libParticle.a

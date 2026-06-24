@@ -6,12 +6,13 @@ WORKSPACE_DIR="$(cd "${PACKAGE_DIR}/.." && pwd)"
 VENV_DIR="${PACKAGE_DIR}/.venv"
 REQUIREMENTS="${PACKAGE_DIR}/requirements.txt"
 REQUIREMENTS_STAMP="${VENV_DIR}/.requirements.sha256"
+URDF_EXTRAS_PATH="${PACKAGE_DIR}/urdf/warthog_ground_truth.urdf.xacro"
 
 SPAWN_X="0.0"
 SPAWN_Y="0.0"
 SPAWN_Z="0.5"
 GUI="false"
-TRAJECTORY_TYPE="lemniscate"
+TRAJECTORY_TYPE="circle"
 TRAJECTORY_DURATION_SEC="1800"
 TRAJECTORY_PUBLISH_RATE="20"
 RUN_PARSER="true"
@@ -29,7 +30,7 @@ Options:
   --y VALUE                   Spawn Y coordinate (default: ${SPAWN_Y})
   --z VALUE                   Spawn Z coordinate (default: ${SPAWN_Z})
   --gui                       Run Gazebo with GUI
-  --trajectory-type NAME      lemniscate, circle, segments, interpolated, or waypoints
+  --trajectory-type NAME      circle, segments, or interpolated
                               (default: ${TRAJECTORY_TYPE})
   --duration-sec VALUE        Duration per world in seconds (default: ${TRAJECTORY_DURATION_SEC})
   --rate VALUE                Command publish rate in Hz (default: ${TRAJECTORY_PUBLISH_RATE})
@@ -54,6 +55,18 @@ require_value() {
   fi
 }
 
+source_relaxed() {
+  local source_path="$1"
+  local status
+
+  set +u
+  # shellcheck disable=SC1090
+  source "${source_path}"
+  status="$?"
+  set -u
+  return "${status}"
+}
+
 requirements_changed() {
   [ ! -f "${REQUIREMENTS_STAMP}" ] && return 0
   command -v sha256sum >/dev/null 2>&1 || return 1
@@ -64,23 +77,59 @@ requirements_changed() {
   [ "${current_hash}" != "${stored_hash}" ]
 }
 
+python_major_minor() {
+  "$1" -c 'import sys; print(f"{sys.version_info.major}.{sys.version_info.minor}")'
+}
+
+venv_config_major_minor() {
+  [ -f "${VENV_DIR}/pyvenv.cfg" ] || return 1
+  awk -F' = ' '$1 == "version" { split($2, version, "."); print version[1] "." version[2]; exit }' \
+    "${VENV_DIR}/pyvenv.cfg"
+}
+
+venv_site_packages() {
+  "${VENV_DIR}/bin/python3" -c 'import sysconfig; print(sysconfig.get_paths()["purelib"])'
+}
+
+venv_is_usable() {
+  [ -x "${VENV_DIR}/bin/python3" ] || return 1
+
+  local configured_version runtime_version site_packages
+  configured_version="$(venv_config_major_minor)" || return 1
+  runtime_version="$(python_major_minor "${VENV_DIR}/bin/python3")" || return 1
+  [ -n "${configured_version}" ] && [ "${configured_version}" = "${runtime_version}" ] || return 1
+
+  site_packages="$(venv_site_packages)" || return 1
+  [ -d "${site_packages}" ] || return 1
+
+  "${VENV_DIR}/bin/python3" -m pip --version >/dev/null 2>&1
+}
+
+prepend_venv_pythonpath() {
+  local site_packages
+  site_packages="$(venv_site_packages)" || return 0
+  [ -d "${site_packages}" ] || return 0
+
+  case ":${PYTHONPATH:-}:" in
+    *":${site_packages}:"*) ;;
+    *) export PYTHONPATH="${site_packages}${PYTHONPATH:+:${PYTHONPATH}}" ;;
+  esac
+}
+
 prepare_environment() {
-  if [ ! -d "${VENV_DIR}" ] || requirements_changed; then
+  if ! venv_is_usable || requirements_changed; then
     echo "Preparing virtual environment..."
-    # shellcheck disable=SC1091
-    source "${PACKAGE_DIR}/scripts/setup.sh"
+    source_relaxed "${PACKAGE_DIR}/scripts/python_venv_setup.sh"
   else
-    # shellcheck disable=SC1091
-    source "${VENV_DIR}/bin/activate"
+    source_relaxed "${VENV_DIR}/bin/activate"
   fi
 
   if [ -f "${WORKSPACE_DIR}/devel/setup.bash" ]; then
-    # shellcheck disable=SC1091
-    source "${WORKSPACE_DIR}/devel/setup.bash"
+    source_relaxed "${WORKSPACE_DIR}/devel/setup.bash"
   elif [ -f "${WORKSPACE_DIR}/install/setup.bash" ]; then
-    # shellcheck disable=SC1091
-    source "${WORKSPACE_DIR}/install/setup.bash"
+    source_relaxed "${WORKSPACE_DIR}/install/setup.bash"
   fi
+  prepend_venv_pythonpath
 
   command -v roslaunch >/dev/null 2>&1 ||
     die "roslaunch is not available. Build and source the workspace first."
@@ -107,6 +156,7 @@ run_world() {
   timeout --signal=INT --kill-after=20s "${TRAJECTORY_DURATION_SEC}s" \
     roslaunch warthog_simulator simulation.launch \
       "world_path:=${world_path}" \
+      "urdf_extras_path:=${URDF_EXTRAS_PATH}" \
       "x:=${SPAWN_X}" \
       "y:=${SPAWN_Y}" \
       "z:=${SPAWN_Z}" \
@@ -203,6 +253,12 @@ else
   die "World target does not exist: ${TARGET_DIR}"
 fi
 
+[ -f "${URDF_EXTRAS_PATH}" ] ||
+  die "URDF extras file does not exist: ${URDF_EXTRAS_PATH}"
+export URDF_EXTRAS="${URDF_EXTRAS_PATH}"
+export WARTHOG_URDF_EXTRAS="${URDF_EXTRAS_PATH}"
+export GAZEBO_MODEL_PATH="${PACKAGE_DIR}${GAZEBO_MODEL_PATH:+:${GAZEBO_MODEL_PATH}}"
+
 prepare_environment
 mkdir -p "${BAG_DIR}" "${DATASET_DIR}"
 
@@ -210,6 +266,7 @@ echo "Starting Warthog simulation:"
 echo "  target:     ${TARGET} (${MODE})"
 echo "  worlds:     ${#WORLD_FILES[@]}"
 echo "  trajectory: ${TRAJECTORY_TYPE}, ${TRAJECTORY_DURATION_SEC}s per world"
+echo "  urdf extra: ${WARTHOG_URDF_EXTRAS}"
 echo "  bags:       ${BAG_DIR}"
 echo "  datasets:   ${DATASET_DIR}"
 

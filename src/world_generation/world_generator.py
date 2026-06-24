@@ -430,23 +430,23 @@ if __name__ == "__main__":
             contact_kd=1e4,
             visual_rgba="0.30 0.20 0.10 1",
         ),
-        Surface(
-            "soft_soil",
-            friction_mu=0.5,
-            friction_mu2=0.5,
-            friction_slip1=0.05,
-            friction_slip2=0.05,
-            contact_kp=1e5,
-            contact_kd=1e4,
-            visual_rgba="0.36 0.28 0.16 1",
-        )
+        # Surface(
+        #     "soft_soil",
+        #     friction_mu=0.5,
+        #     friction_mu2=0.5,
+        #     friction_slip1=0.05,
+        #     friction_slip2=0.05,
+        #     contact_kp=1e5,
+        #     contact_kd=1e4,
+        #     visual_rgba="0.36 0.28 0.16 1",
+        # )
     ]
     basis_name = "basis_example"
     basis_worlds_dir = generate_basis_worlds(surfaces, basis_name)
 
     # Пример генерации мира, заполненного случайной сеткой поверхностей
     World(surfaces, "squares_example").generate_squares_world(
-        tile_size=8.0,
+        tile_size=2.0,
         map_width=64.0,
         map_lenght=64.0,
     )
@@ -455,5 +455,5 @@ if __name__ == "__main__":
     World(surfaces, "voronoi_example").generate_voronoi_world(
         map_width=64.0,
         map_lenght=64.0,
-        number_of_points=20,
+        number_of_points=100,
     )

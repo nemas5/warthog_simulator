@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/pspso.dir/bindings.cpp.o"
-  "CMakeFiles/pspso.dir/bindings.cpp.o.d"
-  "pspso.cpython-312-x86_64-linux-gnu.so"
+  "pspso.cpython-38-x86_64-linux-gnu.so"
   "pspso.pdb"
 )
 

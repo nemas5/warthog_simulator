@@ -1,1 +1,1 @@
-/usr/bin/c++ -fPIC -flto -shared  -o pspso.cpython-312-x86_64-linux-gnu.so CMakeFiles/pspso.dir/bindings.cpp.o  libPSO.a libSubsworm.a libParticle.a 
+/usr/bin/c++ -fPIC   -shared  -o pspso.cpython-38-x86_64-linux-gnu.so CMakeFiles/pspso.dir/bindings.cpp.o  -flto libPSO.a libSubsworm.a libParticle.a 

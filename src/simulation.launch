@@ -2,6 +2,8 @@
   <arg name="world_path"/>
   <arg name="surface_map_path"/>
   <arg name="bag_path"/>
+  <arg name="urdf_extras_path"
+       default="$(find warthog_simulator)/urdf/warthog_ground_truth.urdf.xacro"/>
   <arg name="x"/>
   <arg name="y"/>
   <arg name="z"/>
@@ -10,10 +12,8 @@
   <arg name="trajectory_duration_sec"/>
   <arg name="trajectory_publish_rate"/>
 
-  <env name="URDF_EXTRAS"
-       value="$(find warthog_simulator)/urdf/warthog_ground_truth.urdf.xacro"/>
-  <env name="WARTHOG_URDF_EXTRAS"
-       value="$(find warthog_simulator)/urdf/warthog_ground_truth.urdf.xacro"/>
+  <env name="URDF_EXTRAS" value="$(arg urdf_extras_path)"/>
+  <env name="WARTHOG_URDF_EXTRAS" value="$(arg urdf_extras_path)"/>
   <env name="GAZEBO_MODEL_PATH"
        value="$(find warthog_simulator):$(optenv GAZEBO_MODEL_PATH)"/>
 

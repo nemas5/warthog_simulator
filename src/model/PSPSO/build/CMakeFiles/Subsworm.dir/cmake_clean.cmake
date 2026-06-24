@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Subsworm.dir/Subsworm/Subsworm.cpp.o"
-  "CMakeFiles/Subsworm.dir/Subsworm/Subsworm.cpp.o.d"
   "libSubsworm.a"
   "libSubsworm.pdb"
 )

@@ -1,2 +1,2 @@
-/usr/bin/ar qc libPSO.a CMakeFiles/PSO.dir/PSO/PSO.cpp.o
+/usr/bin/ar qc libPSO.a  CMakeFiles/PSO.dir/PSO/PSO.cpp.o
 /usr/bin/ranlib libPSO.a

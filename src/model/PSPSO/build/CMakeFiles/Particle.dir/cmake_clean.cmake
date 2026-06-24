@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Particle.dir/Particle/Particle.cpp.o"
-  "CMakeFiles/Particle.dir/Particle/Particle.cpp.o.d"
   "libParticle.a"
   "libParticle.pdb"
 )

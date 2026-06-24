@@ -18,7 +18,7 @@
 Из корня workspace:
 
 ```bash
-source src/scripts/setup.sh
+source src/scripts/python_venv_setup.sh
 python src/world_generation/world_generator.py
 ```
 
