@@ -1,0 +1,53 @@
+<launch>
+  <arg name="world_path"/>
+  <arg name="surface_map_path"/>
+  <arg name="bag_path"/>
+  <arg name="x"/>
+  <arg name="y"/>
+  <arg name="z"/>
+  <arg name="gui"/>
+  <arg name="trajectory_type"/>
+  <arg name="trajectory_duration_sec"/>
+  <arg name="trajectory_publish_rate"/>
+
+  <env name="URDF_EXTRAS"
+       value="$(find warthog_simulator)/urdf/warthog_ground_truth.urdf.xacro"/>
+  <env name="WARTHOG_URDF_EXTRAS"
+       value="$(find warthog_simulator)/urdf/warthog_ground_truth.urdf.xacro"/>
+  <env name="GAZEBO_MODEL_PATH"
+       value="$(find warthog_simulator):$(optenv GAZEBO_MODEL_PATH)"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg world_path)"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="headless" value="$(eval 'false' if arg('gui') == 'true' else 'true')"/>
+  </include>
+
+  <include file="$(find warthog_gazebo)/launch/spawn_warthog.launch">
+    <arg name="x" value="$(arg x)"/>
+    <arg name="y" value="$(arg y)"/>
+    <arg name="z" value="$(arg z)"/>
+  </include>
+
+  <node pkg="warthog_simulator"
+        type="surface_detector.py"
+        name="surface_detector"
+        output="screen">
+    <param name="surface_map_path" value="$(arg surface_map_path)"/>
+  </node>
+
+  <node pkg="warthog_simulator"
+        type="trajectory_runner.py"
+        name="trajectory_runner"
+        output="screen">
+    <param name="trajectory_type" value="$(arg trajectory_type)"/>
+    <param name="duration_sec" value="$(arg trajectory_duration_sec)" type="double"/>
+    <param name="publish_rate" value="$(arg trajectory_publish_rate)" type="double"/>
+  </node>
+
+  <node pkg="rosbag"
+        type="record"
+        name="rosbag_record"
+        output="screen"
+        args="-O $(arg bag_path) /ground_truth/odom /odometry/filtered /warthog_velocity_controller/odom /imu/data /cmd_vel /terrain/surface_type"/>
+</launch>

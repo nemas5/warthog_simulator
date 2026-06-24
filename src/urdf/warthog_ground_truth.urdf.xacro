@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- Ground truth pose publisher (libgazebo_ros_p3d) -->
+  <gazebo>
+    <plugin name="ground_truth_odom" filename="libgazebo_ros_p3d.so">
+      <frameName>map</frameName>
+      <bodyName>base_link</bodyName>
+      <topicName>/ground_truth/odom</topicName>
+      <updateRate>50.0</updateRate>
+    </plugin>
+  </gazebo>
+</robot>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>warthog_simulator</name>
+  <version>1.0.0</version>
+  <description>Warthog simulation</description>
+  <maintainer email="treusis@student.bmstu.ru">Ivan</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>rospy</build_depend>
+  <build_depend>nav_msgs</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>tf</build_depend>
+
+  <exec_depend>warthog_gazebo</exec_depend>
+  <exec_depend>warthog_description</exec_depend>
+  <exec_depend>warthog_control</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>gazebo_plugins</exec_depend>
+  <exec_depend>rosbag</exec_depend>
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>tf</exec_depend>
+  <exec_depend>python3-pip</exec_depend>
+  <exec_depend>python3-venv</exec_depend>
+</package>

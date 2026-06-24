@@ -1,0 +1,56 @@
+<link name="link">
+<collision name="col">
+
+  <geometry>
+    ${geometry}
+  </geometry>
+
+  <max_contacts>10</max_contacts>
+
+  <surface>
+    <friction>
+
+      <ode>
+        <mu>${friction_mu}</mu>
+        <mu2>${friction_mu2}</mu2>
+        <fdir1>1 0 0</fdir1>
+        <slip1>${friction_slip1}</slip1>
+        <slip2>${friction_slip2}</slip2>
+      </ode>
+
+      <torsional>
+        <coefficient>${torsional_coefficient}</coefficient>
+        <use_patch_radius>false</use_patch_radius>
+        <surface_radius>${torsional_surface_radius}</surface_radius>
+        <ode><slip>${torsional_slip}</slip></ode>
+      </torsional>
+
+    </friction>
+
+    <bounce>
+      <restitution_coefficient>${bounce_coefficient}</restitution_coefficient>
+      <threshold>${bounce_threshold}</threshold>
+    </bounce>
+
+    <contact>
+      <ode>
+        <kp>${contact_kp}</kp>
+        <kd>${contact_kd}</kd>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.0</min_depth>
+      </ode>
+    </contact>
+
+  </surface>
+</collision>
+
+<visual name="visual">
+  <geometry>${geometry}</geometry>
+  <material>
+    <diffuse>${visual_rgba}</diffuse>
+    <ambient>0 0 0 0</ambient>
+    <specular>0 0 0 1</specular>
+    <emissive>0 0 0 1</emissive>
+  </material>
+</visual>
+</link>

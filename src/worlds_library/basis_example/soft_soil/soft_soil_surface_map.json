@@ -1,0 +1,8 @@
+{
+  "world_name": "soft_soil",
+  "map_type": "single_surface",
+  "surface_name": "soft_soil",
+  "surface_names": [
+    "soft_soil"
+  ]
+}

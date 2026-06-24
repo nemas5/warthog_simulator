@@ -1,0 +1,8 @@
+{
+  "world_name": "ice",
+  "map_type": "single_surface",
+  "surface_name": "ice",
+  "surface_names": [
+    "ice"
+  ]
+}

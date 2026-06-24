@@ -1,0 +1,108 @@
+{
+  "world_name": "squares_example",
+  "map_type": "squares",
+  "tile_size": 8.0,
+  "map_width": 64.0,
+  "map_length": 64.0,
+  "rows": 8,
+  "cols": 8,
+  "origin": {
+    "x": -32.0,
+    "y": -32.0
+  },
+  "bounds": {
+    "min_x": -32.0,
+    "max_x": 32.0,
+    "min_y": -32.0,
+    "max_y": 32.0
+  },
+  "surface_names": [
+    "ice",
+    "wet_asphalt",
+    "dry_concrete",
+    "mud",
+    "soft_soil"
+  ],
+  "map": [
+    [
+      "mud",
+      "wet_asphalt",
+      "mud",
+      "soft_soil",
+      "mud",
+      "mud",
+      "wet_asphalt",
+      "ice"
+    ],
+    [
+      "mud",
+      "ice",
+      "soft_soil",
+      "dry_concrete",
+      "mud",
+      "mud",
+      "wet_asphalt",
+      "soft_soil"
+    ],
+    [
+      "soft_soil",
+      "dry_concrete",
+      "ice",
+      "mud",
+      "wet_asphalt",
+      "mud",
+      "mud",
+      "wet_asphalt"
+    ],
+    [
+      "mud",
+      "soft_soil",
+      "wet_asphalt",
+      "ice",
+      "dry_concrete",
+      "ice",
+      "ice",
+      "dry_concrete"
+    ],
+    [
+      "ice",
+      "dry_concrete",
+      "ice",
+      "dry_concrete",
+      "ice",
+      "dry_concrete",
+      "wet_asphalt",
+      "wet_asphalt"
+    ],
+    [
+      "ice",
+      "soft_soil",
+      "wet_asphalt",
+      "soft_soil",
+      "mud",
+      "dry_concrete",
+      "wet_asphalt",
+      "ice"
+    ],
+    [
+      "ice",
+      "wet_asphalt",
+      "soft_soil",
+      "wet_asphalt",
+      "dry_concrete",
+      "soft_soil",
+      "dry_concrete",
+      "mud"
+    ],
+    [
+      "soft_soil",
+      "dry_concrete",
+      "wet_asphalt",
+      "ice",
+      "soft_soil",
+      "ice",
+      "mud",
+      "dry_concrete"
+    ]
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "world_name": "wet_asphalt",
+  "map_type": "single_surface",
+  "surface_name": "wet_asphalt",
+  "surface_names": [
+    "wet_asphalt"
+  ]
+}

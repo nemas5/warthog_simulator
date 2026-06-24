@@ -1,0 +1,8 @@
+{
+  "world_name": "mud",
+  "map_type": "single_surface",
+  "surface_name": "mud",
+  "surface_names": [
+    "mud"
+  ]
+}

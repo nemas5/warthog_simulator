@@ -1,0 +1,10 @@
+/logs/
+/devel/
+/build/
+.codex/
+.catkin_tools/
+.agents/
+.venv/
+__pycache__/
+/bags/
+/datasets/

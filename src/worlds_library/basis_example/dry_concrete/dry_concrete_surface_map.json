@@ -1,0 +1,8 @@
+{
+  "world_name": "dry_concrete",
+  "map_type": "single_surface",
+  "surface_name": "dry_concrete",
+  "surface_names": [
+    "dry_concrete"
+  ]
+}
