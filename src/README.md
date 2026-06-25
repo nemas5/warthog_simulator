@@ -57,11 +57,6 @@ source src/scripts/python_venv_setup.sh
 ```
 После изменения `requirements.txt` лучше заново выполнить `source src/scripts/python_venv_setup.sh` и пересобрать пакет, чтобы `catkin_install_python` использовал актуальный Python.
 
-Собрать Python-модуль PSPSO. Это необходимо для тестов моделей: `model_test.py` импортирует `pspso` из `src/model/PSPSO/build`.
-```bash
-src/scripts/build_pspso.sh
-```
-
 Собрать catkin-пакет:
 ```bash
 catkin build warthog_simulator
@@ -69,6 +64,12 @@ catkin build warthog_simulator
 Обновить зависимости:
 ```bash
 source devel/setup.bash
+```
+После проделанных шагов симулятор готов к использованию по инструккциям ниже.
+
+Сборка python-библиотеки PSPSO: `model_test.py` импортирует `pspso` из `src/model/PSPSO/build`. Версия в репозитории собрана под Python 3.8, стандартный для контейнера с ROS1 Noetic. При использовании другой версии или изменении в алгоритме оптимизации нужно пересобрать библиотеку с помощью скрипта:
+```bash
+src/scripts/build_pspso.sh
 ```
 
 ## Структура проекта
@@ -85,7 +86,7 @@ warthog_simulator/                 # корень catkin workspace
 │   ├── ros_nodes/                 # ROS-ноды симуляции
 │   │   ├── trajectory_runner.py
 │   │   └── surface_detector.py
-│   ├── bag_parser/
+│   ├── bag_parser/                # парсер bag в csv
 │   │   └── gazebo_dataset_parser.py
 │   ├── world_generation/          # генератор миров и его SDF-шаблоны
 │   ├── worlds_library/            # библиотека миров — вход start_simulation.sh
@@ -100,6 +101,7 @@ warthog_simulator/                 # корень catkin workspace
 │   ├── urdf/                      # дополнительные Xacro-компоненты Warthog
 │   ├── model/                     # код и файлы моделей
 │   │   ├── model_test.py
+|   |   ├── PSPSO/                 # собранный пакет метода оптимизации для теста моделей
 │   │   └── neural_models/         # сюда помещаются сохранённые модели
 │   ├── simulation.launch
 │   ├── package.xml
@@ -112,19 +114,27 @@ warthog_simulator/                 # корень catkin workspace
 │   ├── <world_name>.csv
 │   └── <world_set_name>/
 │       └── <surface>_<run_id>.csv
-├── devel/                         # catkin build space
-└── install/                       # catkin install space, если используется
+├── PSPSO/                         # C++ библиотека для Python с методом оптимизации (используется в модели)
+|
+├── neural_ode_notebook/           # Ноутбук для обучения моделей
+|
+|
+├── devel/                         # catkin build space (генерируется при сборке проекта)
+|
+├── build/                         # catkin build space (генерируется при сборке проекта)
+|
+├── logs/                          # catkin build space (генерируется при сборке проекта)
 ```
 
 Основные привязки путей:
 
-| Данные | Откуда читаются | Куда записываются |
+| Данные | Откуда читаются | Как записываются |
 |--------|-----------------|--------------------|
 | Миры | `src/worlds_library/` | Генератор также пишет в `src/worlds_library/`. |
 | Карты поверхностей | Рядом с `.world`, файл `*_surface_map.json` | Создаются вместе с миром. |
 | STL-меши мира | `<world_name>/meshes/` | Создаются генератором для мира Вороного. |
-| Bag-файлы | — | `bags/<world>.bag` или `bags/<set>/`. |
-| CSV-датасеты | `bags/` | `datasets/<world>.csv` или `datasets/<set>/`. |
+| Bag-файлы | `bags/<world>.bag` или `bags/<set>/` | При симуляции записываются топики специальной нодой. |
+| CSV-датасеты | `datasets/<world>.csv` или `datasets/<set>/` | записываются парсером после обработки `bags/` |
 | Модели | `src/model/neural_models/` | Сюда нужно помещать модель для последующего тестирования. |
 | URDF/Xacro-расширения | `src/urdf/` | Подключаются явным путём из `simulation.launch`. |
 
@@ -278,33 +288,9 @@ def _build_my_trajectory(self) -> Trajectory:
 
 Для траектории с внутренним состоянием удобнее создать отдельный класс. Если нужны новые настраиваемые параметры, их следует добавить в `RunnerParams` и загрузить в `_load_params()`.
 
-### Влияние времени симуляции
-
-Начало и прошедшее время вычисляются через `rospy.Time.now()`:
-
-```python
-start = rospy.Time.now()
-elapsed = (rospy.Time.now() - start).to_sec()
-```
-
-При работе с Gazebo это simulation time из `/clock`, а не системное время компьютера:
-
-- при паузе Gazebo `elapsed` и `rospy.Rate` останавливаются;
-- если Gazebo работает медленнее реального времени, траектория длится дольше по настенным часам;
-- если simulation time ускорено, траектория завершается быстрее по настенным часам;
-- `--duration-sec` задаёт продолжительность именно в simulation time.
-
-Зависимость встроенных траекторий от времени различается:
-
-- `segments` выбирает текущий временной сегмент;
-- `interpolated` интерполирует команды между временными точками;
-- `circle` публикует постоянные скорости и использует время только для общей длительности запуска.
-
-Важно: `start_simulation.sh` дополнительно ограничивает весь `roslaunch` командой системного `timeout` с той же длительностью. Это wall time, в который входит загрузка Gazebo. Поэтому при долгом запуске Gazebo или `real_time_factor < 1` оболочка может завершить процесс раньше, чем `trajectory_runner` наберёт заданное simulation time.
-
 ## Обучение и добавление модели для тестирования
 
-пока не трогай
+Модели для тестирования могут быть обучены и загружены в директорию `src/model/neural_models/<models_set>`. При тестировании дириектория `<models_set>` указывается в вызове `start_model_testing`. `model_test.py` автоматически заберёт все модели из диреткории, проинициализирует их для использования и протестирует алгоритм.
 
 ## Запуск тестирования модели
 
@@ -353,13 +339,7 @@ src/bag_parser/gazebo_dataset_parser.py basis_example
 
 Для одиночного мира парсер обрабатывает `bags/<name>.bag`. Для набора он читает все `.bag` из `bags/<name>/` и сохраняет CSV с теми же базовыми именами в `datasets/<name>/`.
 
-После `catkin build` и `source devel/setup.bash` можно запускать через ROS:
-
-```bash
-rosrun warthog_simulator gazebo_dataset_parser.py basis_example
-```
-
-Парсер объединяет `/terrain/surface_type`, `/cmd_vel` и одометрию по ближайшему времени. Основной odom-топик — `/odometry/filtered`; если его нет в bag, используется `/ground_truth/odom`, затем `/warthog_velocity_controller/odom`.
+Парсер объединяет `/terrain/surface_type`, `/cmd_vel` и одометрию по ближайшему времени.
 
 ## Расширение модели Warthog через URDF/Xacro
 
