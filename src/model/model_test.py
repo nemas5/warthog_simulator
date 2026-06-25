@@ -1,10 +1,17 @@
 import sys
 import argparse
+import importlib.util
+import os
 from pathlib import Path
 
 import torch
 import numpy as np
 import pandas as pd
+import matplotlib
+
+if not os.environ.get("DISPLAY") or importlib.util.find_spec("tkinter") is None:
+    matplotlib.use("Agg")
+
 import matplotlib.pyplot as plt
 from torchdiffeq import odeint
 from sklearn.metrics import mean_absolute_error
@@ -18,18 +25,19 @@ import pspso
 
 
 class ODEFunc(torch.nn.Module):
-    def __init__(self, hidden=64):
+    def __init__(self, hidden=16):
         super().__init__()
+
         self.net = torch.nn.Sequential(
-            torch.nn.Linear(4, hidden), torch.nn.Tanh(),
-            torch.nn.Linear(hidden, hidden), torch.nn.Tanh(),
+            torch.nn.Linear(4, hidden),
+            torch.nn.Tanh(),
             torch.nn.Linear(hidden, 2)
         )
-        self.ctrl = None
 
     def forward(self, t, y):
-        # y: [batch, 2], ctrl: [batch, 2]
-        return self.net(torch.cat([y, self.ctrl], dim=-1))
+        state_derivative = self.net(y)
+        control_derivative = torch.zeros_like(y[:, 2:])
+        return torch.cat([state_derivative, control_derivative], dim=-1)
 
 
 def parse_args():
@@ -50,6 +58,13 @@ def load_model_from_state_dict(state_dict) -> ODEFunc:
     return model
 
 
+def load_checkpoint(model_file: Path):
+    try:
+        return torch.load(model_file, map_location="cpu", weights_only=True)
+    except TypeError:
+        return torch.load(model_file, map_location="cpu")
+
+
 def load_basis_models(basis_name: str):
     basis_dir = MODEL_DIR / "neural_models" / basis_name
     model_files = sorted(
@@ -59,7 +74,7 @@ def load_basis_models(basis_name: str):
 
     models = []
     for model_file in model_files:
-        checkpoint = torch.load(model_file, map_location="cpu")
+        checkpoint = load_checkpoint(model_file)
         if is_state_dict(checkpoint):
             models.append((model_file.stem, load_model_from_state_dict(checkpoint)))
         else:
@@ -81,6 +96,18 @@ def dataset_path(dataset_name: str) -> Path:
     return WORKSPACE_DIR / "datasets" / name
 
 
+def show_or_save(fig, filename: str):
+    if matplotlib.get_backend().lower() == "agg":
+        output_dir = MODEL_DIR / "results"
+        output_dir.mkdir(exist_ok=True)
+        output_path = output_dir / filename
+        fig.savefig(output_path, dpi=150)
+        print(f"Saved plot: {output_path}")
+        plt.close(fig)
+    else:
+        plt.show()
+
+
 @torch.no_grad()
 def get_basis_output(model: ODEFunc, df_slice: pd.DataFrame) -> np.ndarray:
     """
@@ -90,13 +117,16 @@ def get_basis_output(model: ODEFunc, df_slice: pd.DataFrame) -> np.ndarray:
     """
     outputs = []
     for _, row in df_slice.iterrows():
-        y0   = torch.tensor([[row["odom_vx"], row["odom_wz"]]], dtype=torch.float32)
-        ctrl = torch.tensor([[row["cmd_vx"],  row["cmd_wz"]]], dtype=torch.float32)
-        model.ctrl = ctrl
+        y0 = torch.tensor([[
+            row["odom_vx"],
+            row["odom_wz"],
+            row["cmd_vx"],
+            row["cmd_wz"],
+        ]], dtype=torch.float32)
 
         t = torch.tensor([0.0, float(row["dt"])], dtype=torch.float32)
-        traj = odeint(model, y0, t)          # shape: [2, 1, 2]
-        y_next = traj[-1].squeeze(0).cpu().numpy()  # [2]
+        traj = odeint(model, y0, t)          # shape: [2, 1, 4]
+        y_next = traj[-1, :, :2].squeeze(0).cpu().numpy()  # [2]
         outputs.append(y_next)
 
     return np.vstack(outputs)                # shape: (N, 2)
@@ -175,7 +205,9 @@ print(f"MAE vx = {mae_vx:.4f}")
 print(f"MAE wz = {mae_wz:.4f}")
 
 # Время из stamp (наносекунды -> секунды)
-t = (df_cur["stamp"] - df_cur["stamp"].iloc[0]) * 1e-9
+t = ((df_cur["stamp"] - df_cur["stamp"].iloc[0]) * 1e-9).to_numpy()
+cmd_vx = df_cur["cmd_vx"].to_numpy()
+cmd_wz = df_cur["cmd_wz"].to_numpy()
 
 err_vx = pred_vx - true_vx
 err_wz = pred_wz - true_wz
@@ -187,7 +219,7 @@ fig, axs = plt.subplots(3, 1, figsize=(14, 10), sharex=True)
 # 1) vx real vs predicted + control
 axs[0].plot(t, true_vx, label="vx real", color="black")
 axs[0].plot(t, pred_vx, label="vx predicted", color="orange", linestyle="--")
-axs[0].plot(t, df_cur["cmd_vx"], label="cmd_vx", color="purple", linestyle=":")
+axs[0].plot(t, cmd_vx, label="cmd_vx", color="purple", linestyle=":")
 axs[0].set_ylabel("vx [m/s]")
 axs[0].legend()
 axs[0].grid(True)
@@ -195,7 +227,7 @@ axs[0].grid(True)
 # 2) wz real vs predicted + control
 axs[1].plot(t, true_wz, label="wz real", color="black")
 axs[1].plot(t, pred_wz, label="wz predicted", color="blue", linestyle="--")
-axs[1].plot(t, df_cur["cmd_wz"], label="cmd_wz", color="brown", linestyle=":")
+axs[1].plot(t, cmd_wz, label="cmd_wz", color="brown", linestyle=":")
 axs[1].set_ylabel("wz [rad/s]")
 axs[1].legend()
 axs[1].grid(True)
@@ -209,13 +241,13 @@ axs[2].legend()
 axs[2].grid(True)
 
 plt.tight_layout()
-plt.show()
+show_or_save(fig, "model_test_prediction.png")
 
-plt.figure(figsize=(12, 4))
+fig = plt.figure(figsize=(12, 4))
 plt.plot(t, true_vx, label="vx real next", color="black")
 for model_idx, (model_name, _) in enumerate(models):
     plt.plot(t, basis_outputs[model_idx][:, 0], label=f"{model_idx}: {model_name}")
 plt.legend()
 plt.grid(True)
 plt.tight_layout()
-plt.show()
+show_or_save(fig, "model_test_basis_vx.png")
